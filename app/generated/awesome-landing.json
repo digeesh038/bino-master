@@ -1,0 +1,24 @@
+{
+  "components": [
+    {
+      "type": "TextSection",
+      "props": {
+        "title": "Welcome to the Future",
+        "subtitle": "Revolutionary Platform",
+        "size": "xl",
+        "gradient": "from-blue-600 to-purple-600"
+      }
+    },
+    {
+      "type": "CTA",
+      "props": {
+        "heading": "Ready to Start?",
+        "ctaText": "Get Started",
+        "href": "/",
+        "pattern": true
+      }
+    }
+  ],
+  "createdAt": "2025-07-31T16:16:17.863Z",
+  "slug": "awesome-landing"
+}
