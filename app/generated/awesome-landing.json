@@ -14,11 +14,11 @@
       "props": {
         "heading": "Ready to Start?",
         "ctaText": "Get Started",
-        "href": "/",
+        "href": "/signup",
         "pattern": true
       }
     }
   ],
-  "createdAt": "2025-07-31T16:16:17.863Z",
+  "createdAt": "2025-10-06T13:28:13.092Z",
   "slug": "awesome-landing"
 }
