@@ -101,7 +101,12 @@ const seedDatabase = async () => {
 
 // Health check for Render
 app.get('/', (req, res) => {
-    res.json({ status: 'Bino Backend is Live 🚀', database: mongoose.connection.readyState === 1 ? 'Connected' : 'Disconnected' });
+    const states = ['Disconnected', 'Connected', 'Connecting', 'Disconnecting'];
+    res.json({
+        status: 'Bino Backend is Live 🚀',
+        database: states[mongoose.connection.readyState] || 'Unknown',
+        timestamp: new Date().toISOString()
+    });
 });
 
 // Logs for every request in production
