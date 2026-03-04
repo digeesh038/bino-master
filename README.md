@@ -1,36 +1,91 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Bino Dynamic Page Engine 🚀
 
-## Getting Started
+A professional, high-performance monorepo for generating on-demand web pages via a simple JSON API.
 
-First, run the development server:
+## Project Structure
+- **`/frontend`**: Next.js 15 application with premium components (Framer Motion + Tailwind).
+- **`/backend`**: Express server with MongoDB integration for persistent page storage.
 
+## Core Features
+1. **POST /api/pages**: Create new routes on-the-fly.
+2. **Dynamic Rendering**: Pages are immediately available at `/{slug}`.
+3. **5 Reusable Components**: 
+   - `TextSection`: Titles, subtitles, and body text with gradients.
+   - `ImageBlock`: High-quality images with zoom/fade animations.
+   - `Card`: Interactive cards with glassmorphism and tilt effects.
+   - `StatsBox`: Animated statistics with icons.
+   - `CTA`: Powerful call-to-action sections.
+
+## How to use
+
+### 1. Installation
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm run install:all
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### 2. Development
+```bash
+npm run dev
+```
+Wait for both servers to start:
+- Frontend: `http://localhost:3000`
+- Backend: `http://localhost:5000`
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### 3. Environment Variables
+Created in `backend/.env`:
+- `PORT`: 5000 (default)
+- `MONGODB_URI`: Connection string to your MongoDB.
+- `BACKEND_URL`: (Frontend) Set this to your backend API URL if not localhost.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### 3. Create a Page (Sample Curl)
+```bash
+curl -X POST http://localhost:3000/api/pages \
+  -H "Content-Type: application/json" \
+  -d '{
+    "slug": "future-launch",
+    "components": [
+      {
+        "type": "TextSection",
+        "props": {
+          "title": "Welcome to the Future",
+          "subtitle": "Bino Engine v1.0",
+          "gradient": "from-blue-600 to-purple-600"
+        }
+      },
+      {
+        "type": "ImageBlock",
+        "props": {
+          "src": "https://images.unsplash.com/photo-1451187580459-43490279c0fa",
+          "alt": "Space technology",
+          "aspect": "wide"
+        }
+      }
+    ]
+  }'
+```
 
-## Learn More
+After running the above, visit `http://localhost:3000/future-launch`.
 
-To learn more about Next.js, take a look at the following resources:
+## Generated Pages
+- [Home](http://localhost:3000/)
+- [Problem Statement](http://localhost:3000/problem)
+- [API Documentation & Playground](http://localhost:3000/api)
+- [Demo Page](http://localhost:3000/demo-page) (Auto-seeded)
+- [Feature Showcase](http://localhost:3000/test3) (Auto-seeded)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Deployment Guide
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### Frontend (Vercel)
+1. Push your code to GitHub.
+2. Link your repository to Vercel.
+3. Set Environment Variable: `BACKEND_URL` to your deployed backend URL.
 
-## Deploy on Vercel
+### Backend (Render / Railway)
+1. Create a Web Service.
+2. Set Environment Variable: `MONGODB_URI` to your MongoDB Connection String.
+3. The backend will automatically seed the demo pages on first connection.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Tech Stack
+- **Frontend**: Next.js 15, Framer Motion, Tailwind CSS, TypeScript.
+- **Backend**: Node.js, Express, MongoDB (Mongoose).
+- **Aesthetics**: Glassmorphism, Modern Gradients, "Pro Gamer" feel.
