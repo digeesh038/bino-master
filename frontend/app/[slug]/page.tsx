@@ -15,7 +15,7 @@ export const dynamic = 'force-dynamic';
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
-  const backendUrl = process.env.BACKEND_URL || 'http://localhost:5000';
+  const backendUrl = process.env.NEXT_PUBLIC_BACKEND_URL || 'http://localhost:5000';
 
   try {
     const res = await fetch(`${backendUrl}/api/pages/${slug}`, { cache: 'no-store' });
@@ -39,16 +39,16 @@ const componentsMap = {
 };
 
 type Props = {
-  params: Promise<{
+  params: {
     slug: string;
-  }>;
+  };
 };
 
 export default async function Page({ params }: Props) {
-  const { slug } = await params;
+  const { slug } = params;
 
   // Fetch from our new backend
-  const backendUrl = process.env.BACKEND_URL || 'http://localhost:5000';
+  const backendUrl = process.env.NEXT_PUBLIC_BACKEND_URL || 'http://localhost:5000';
   console.log(`[SLUG PAGE] Fetching ${slug} from ${backendUrl}/api/pages/${slug}`);
 
   let pageData: { components: any[]; } | null = null;
