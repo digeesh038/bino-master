@@ -3,7 +3,7 @@ import { NextRequest, NextResponse } from 'next/server';
 export async function POST(req: NextRequest) {
     try {
         const body = await req.json();
-        const backendUrl = process.env.BACKEND_URL || 'http://localhost:5000';
+        const backendUrl = process.env.NEXT_PUBLIC_BACKEND_URL || 'http://localhost:5000';
 
         const res = await fetch(`${backendUrl}/api/pages`, {
             method: 'POST',
@@ -21,7 +21,7 @@ export async function POST(req: NextRequest) {
 
 export async function GET() {
     try {
-        const backendUrl = process.env.BACKEND_URL || 'http://localhost:5000';
+        const backendUrl = process.env.NEXT_PUBLIC_BACKEND_URL || 'http://localhost:5000';
         const res = await fetch(`${backendUrl}/api/pages`);
         const data = await res.json();
         return NextResponse.json(data, { status: res.status });
