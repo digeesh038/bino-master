@@ -1,7 +1,6 @@
 # 🚀 Bino: The Professional Dynamic Page Engine
 
 <div align="center">
-🚀 Tech Stack
 
 ![Next.js](https://img.shields.io/badge/Next.js-black?style=for-the-badge&logo=next.js)
 ![Express](https://img.shields.io/badge/Express-grey?style=for-the-badge&logo=express)
