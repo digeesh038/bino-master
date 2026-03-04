@@ -1,16 +1,16 @@
 # 🚀 Bino: The Professional Dynamic Page Engine
 
 <div align="center">
+🚀 Tech Stack
 
-[![Next.js](https://img.shields.io/badge/Next.js-15-black?style=for-the-badge&logo=next.js)](https://nextjs.org)
-[![Express](https://img.shields.io/badge/Express-4.18-lightgrey?style=for-the-badge&logo=express)](https://expressjs.com)
-[![MongoDB](https://img.shields.io/badge/MongoDB-6.0-green?style=for-the-badge&logo=mongodb)](https://mongodb.com)
-[![Tailwind](https://img.shields.io/badge/Tailwind-CSS-3.4?style=for-the-badge&logo=tailwind-css)](https://tailwindcss.com)
+![Next.js](https://img.shields.io/badge/Next.js-black?style=for-the-badge&logo=next.js)
+![Express](https://img.shields.io/badge/Express-grey?style=for-the-badge&logo=express)
+![MongoDB](https://img.shields.io/badge/MongoDB-green?style=for-the-badge&logo=mongodb)
+![TailwindCSS](https://img.shields.io/badge/TailwindCSS-38B2AC?style=for-the-badge&logo=tailwindcss&logoColor=white)
 
 **Bino** is the ultimate bridge between your raw data and premium user experiences. 
 Turn JSON schemas into high-performance, SEO-optimized landing pages instantly via API.
 
-[Explore Docs](/api) • [Report Bug](https://github.com/digeesh038/bino-app/issues) • [Request Feature](https://github.com/digeesh038/bino-app/issues)
 
 </div>
 
