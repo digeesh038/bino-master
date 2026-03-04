@@ -58,8 +58,8 @@ const TEMPLATES = {
     marketing: {
         slug: "marketing-launch",
         components: [
-            { type: "TextSection", props: { title: "The Next Big Thing", subtitle: "Coming Soon", text: "Join the revolution today.", alignment: "center", gradient: "from-blue-600 to-indigo-600", size: "lg" } },
-            { type: "CTA", props: { heading: "Save your spot", ctaText: "Join Waitlist", href: "#", pattern: true } }
+            { type: "TextSection", props: { title: "The Next Big Thing", subtitle: "Coming Soon", text: "Join the revolution today.", alignment: "center", gradient: "from-blue-600 to-indigo-600", size: "xl" } },
+            { type: "CTA", props: { heading: "Save your spot", subheading: "Be the first to experience the engine.", ctaText: "Join Waitlist", href: "#", pattern: true, showInput: true, variant: "large" } }
         ]
     },
     product: {
