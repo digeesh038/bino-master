@@ -14,7 +14,7 @@ import Footer from '../components/Footer';
 export const dynamic = 'force-dynamic';
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const { slug } =  params;
+  const { slug } = await params;
   const backendUrl = process.env.NEXT_PUBLIC_BACKEND_URL || 'http://localhost:5000';
 
   try {
@@ -39,13 +39,13 @@ const componentsMap = {
 };
 
 type Props = {
-  params: {
+  params: Promise<{
     slug: string;
-  };
+  }>;
 };
 
 export default async function Page({ params }: Props) {
-  const { slug } = params;
+  const { slug } = await params;
 
   // Fetch from our new backend
   const backendUrl = process.env.NEXT_PUBLIC_BACKEND_URL || 'http://localhost:5000';
