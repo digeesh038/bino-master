@@ -99,6 +99,17 @@ const seedDatabase = async () => {
     }
 }
 
+// Health check for Render
+app.get('/', (req, res) => {
+    res.json({ status: 'Bino Backend is Live 🚀', database: mongoose.connection.readyState === 1 ? 'Connected' : 'Disconnected' });
+});
+
+// Logs for every request in production
+app.use((req, res, next) => {
+    console.log(`[${new Date().toISOString()}] ${req.method} ${req.url}`);
+    next();
+});
+
 // API Routes
 app.post('/api/pages', async (req, res) => {
     try {
