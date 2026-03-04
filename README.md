@@ -81,7 +81,7 @@ Visit **[localhost:3000](http://localhost:3000)** to see Bino in action.
 Bino comes with a library of high-end, programmable components:
 
 > [!TIP]
-> You can customize these components via the JSON API. Check the [API Docs](/api) for a full list of props.
+> You can customize these components via the JSON API. Check the API Docs for a full list of props.
 
 - **`TextSection`**: Super-bold headings with mesh gradients and readable body text.
 - **`ImageBlock`**: Interactive images with hover-zoom and decorative overlays.
