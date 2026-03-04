@@ -128,6 +128,3 @@ Your page will be live at `http://localhost:3000/pro-campaign` **instantly**.
 
 ---
 
-<div align="center">
-  Built with ❤️ by the Bino Team for the Modern Web.
-</div>
