@@ -13,12 +13,19 @@ app.use(express.json());
 
 // MongoDB connection
 const MONGODB_URI = process.env.MONGODB_URI || 'mongodb://localhost:27017/bino-app';
+
+// Disable buffering so we fail fast if connection is down
+mongoose.set('bufferCommands', false);
+
 mongoose.connect(MONGODB_URI)
     .then(() => {
-        console.log('Connected to MongoDB');
+        console.log('✅ Successfully connected to MongoDB');
         seedDatabase();
     })
-    .catch(err => console.error('MongoDB connection error:', err));
+    .catch(err => {
+        console.error('❌ MongoDB CONNECTION ERROR:', err.message);
+        process.exit(1); // Force restart if no DB
+    });
 
 // Page Schema
 const pageSchema = new mongoose.Schema({
