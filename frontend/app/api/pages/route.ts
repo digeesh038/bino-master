@@ -15,7 +15,12 @@ export async function POST(req: NextRequest) {
         return NextResponse.json(data, { status: res.status });
     } catch (error) {
         console.error('Proxy error:', error);
-        return NextResponse.json({ success: false, error: 'Failed to communicate with backend' }, { status: 500 });
+        return NextResponse.json({
+            success: false,
+            error: 'Failed to communicate with backend',
+            details: (error as Error).message,
+            target: process.env.NEXT_PUBLIC_BACKEND_URL || 'Using fallback: localhost:5000'
+        }, { status: 500 });
     }
 }
 
